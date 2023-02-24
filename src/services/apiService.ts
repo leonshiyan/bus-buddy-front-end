@@ -3,17 +3,16 @@ const apiKey = import.meta.env.VITE_TRANSLINK_API_KEY
 
 async function getStop(stopNo: string) {
   const url = `${baseURL}${stopNo}/estimates?apikey=${apiKey}`
-
-  const res = await fetch(url, {
-    headers: {
-      "accept": "application/JSON"
-    }
-  })
-
-  if (!res.ok) {
-    throw new Error(`Request failed with status ${res.status}`)
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "accept": "application/JSON"
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error);
   }
-  return res.json()
 }
 
 

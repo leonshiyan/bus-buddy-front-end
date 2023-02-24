@@ -18,15 +18,23 @@ interface LandingProps {
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [error, setError] = useState<string | null>(null);
+
 
 const handleSearch = async (busStopNumber: string) => {
-  const searchResults = await apiService.getStop(busStopNumber)
-  //attach the input as part of the result
-  const resultsWithSearchValue = searchResults.map((result: any) => ({
-    ...result,
-    searchValue: busStopNumber,
-  }))
-    setSearchResults(resultsWithSearchValue)
+  try {
+    const searchResults = await apiService.getStop(busStopNumber)
+    //attach the input as part of the result
+    const resultsWithSearchValue = searchResults.map((result: any) => ({
+      ...result,
+      searchValue: busStopNumber,
+    }))
+      setSearchResults(resultsWithSearchValue)
+    } catch (error) {
+      setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`);
+    setSearchResults([]);
+    }
+    
   }
 
 
@@ -35,6 +43,8 @@ const handleSearch = async (busStopNumber: string) => {
       <h1>hello, {user ? user.name : 'friend'}</h1>
 
       {user && <SearchForm handleSearch={handleSearch} />}
+      
+      {error && <p className={styles.errorMessage}>{error}</p>}
       
       {searchResults.map((result) => (
         <div key={result.RouteNo}>
