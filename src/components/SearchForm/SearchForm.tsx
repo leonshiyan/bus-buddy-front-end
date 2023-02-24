@@ -21,5 +21,3 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
 }
 
 export default SearchForm
-  
-  

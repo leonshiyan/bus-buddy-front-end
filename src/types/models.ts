@@ -1,5 +1,15 @@
-/* ---------===== custom props ====--------- */
-
+/* ---------===== custom models ====--------- */
+export interface SearchResult {
+  RouteNo: string
+  RouteName: string
+  Direction: string
+  Schedules: {
+    Destination: string
+    ExpectedLeaveTime: string
+    ExpectedCountdown: number
+    ScheduleStatus: string
+  }[]
+}
 
 
 /* ---------===== auth models =====--------- */
