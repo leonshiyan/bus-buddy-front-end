@@ -5,17 +5,16 @@ import styles from './Landing.module.css'
 import { User } from '../../types/models'
 
 interface LandingProps {
-  user: User | null;
+  user: User | null
 }
-const apiKey = import.meta.env.VITE_TRANSLINK_API_KEY
 
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
-  
+
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-      
+    <h1>hello, {user ? user.name : 'friend'}</h1>
+
     </main>
   )
 }
