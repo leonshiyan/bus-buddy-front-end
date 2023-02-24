@@ -21,7 +21,12 @@ const Landing = (props: LandingProps): JSX.Element => {
 
 const handleSearch = async (busStopNumber: string) => {
   const searchResults = await apiService.getStop(busStopNumber)
-    setSearchResults(searchResults)
+  //attach the input as part of the result
+  const resultsWithSearchValue = searchResults.map((result: any) => ({
+    ...result,
+    searchValue: busStopNumber,
+  }))
+    setSearchResults(resultsWithSearchValue)
   }
 
 
@@ -29,11 +34,11 @@ const handleSearch = async (busStopNumber: string) => {
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
 
-      <SearchForm handleSearch={handleSearch} />
+      {user && <SearchForm handleSearch={handleSearch} />}
       
       {searchResults.map((result) => (
         <div key={result.RouteNo}>
-          <BusStopCard {...result}/>
+          <BusStopCard {...result} />
         </div>
       ))}
     </main>

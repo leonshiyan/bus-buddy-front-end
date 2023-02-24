@@ -3,6 +3,7 @@ export interface SearchResult {
   RouteNo: string
   RouteName: string
   Direction: string
+  searchValue: number
   Schedules: {
     Destination: string
     ExpectedLeaveTime: string
