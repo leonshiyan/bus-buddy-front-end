@@ -9,34 +9,34 @@ import { useState } from 'react'
 
 import SearchForm from '../../components/SearchForm/SearchForm'
 
-
-
 interface LandingProps {
   user: User | null
 }
 interface SearchResult {
-  RouteNo: string;
-  RouteName: string;
-  Direction: string;
-  ExpectedLeaveTime: string;
-  ExpectedCountdown: number;
+  RouteNo: string
+  RouteName: string
 }
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
 
-    // handle search
-    const handleSearch = async (query: string) => {
-      const result = await apiService.getStop(query);
-      const data = result as SearchResult[];
-      setSearchResult(data);
-    }
+  const handleSearch = async (busStopNumber: string) => {
+    const searchResults = await apiService.getStop(busStopNumber)
+    console.log(searchResults)
+    //setSearchResults()
+  }
+
 
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
-      <SearchForm onSearch={handleSearch} />
-      {/* render search results here */}
+      <SearchForm handleSearch={handleSearch} />
+      {searchResults.map((result) => (
+        <div key={result.RouteNo}>
+          <p>Bus Route: {result.RouteNo}</p>
+          <p>Route Name: {result.RouteName}</p>
+        </div>
+      ))}
     </main>
   )
 }

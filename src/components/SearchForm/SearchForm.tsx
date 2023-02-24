@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 interface SearchFormProps {
-  stopSearch: (query: string) => void
+  handleSearch: (query: string) => void
 }
 
 const SearchForm = (props: SearchFormProps): JSX.Element => {
@@ -9,7 +9,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
   
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    props.stopSearch(query)
+    props.handleSearch(query)
   }
 
   return (
