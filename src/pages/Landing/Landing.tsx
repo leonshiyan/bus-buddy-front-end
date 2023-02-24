@@ -12,9 +12,13 @@ import SearchForm from '../../components/SearchForm/SearchForm'
 interface LandingProps {
   user: User | null
 }
+interface Schedule {
+  ExpectedLeaveTime: string
+}
 interface SearchResult {
   RouteNo: string
   RouteName: string
+  Schedules: Schedule[]
 }
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
@@ -22,8 +26,7 @@ const Landing = (props: LandingProps): JSX.Element => {
 
   const handleSearch = async (busStopNumber: string) => {
     const searchResults = await apiService.getStop(busStopNumber)
-    console.log(searchResults)
-    //setSearchResults()
+    setSearchResults(searchResults)
   }
 
 
@@ -35,6 +38,10 @@ const Landing = (props: LandingProps): JSX.Element => {
         <div key={result.RouteNo}>
           <p>Bus Route: {result.RouteNo}</p>
           <p>Route Name: {result.RouteName}</p>
+          <p>Schedules:</p>
+          {result.Schedules.map((schedule) => (
+            <p key={schedule.ExpectedLeaveTime}>Time: {schedule.ExpectedLeaveTime}</p>
+          ))}
         </div>
       ))}
     </main>
