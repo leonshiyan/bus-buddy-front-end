@@ -1,5 +1,7 @@
 // types
 import { Profile } from '../../types/models'
+// components
+import ProfileCard from '../../components/ProfileCard/ProfileCard'
 
 interface ProfilesProps {
   profiles: Profile[];
@@ -14,7 +16,7 @@ const Profiles = (props: ProfilesProps): JSX.Element => {
     <>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map((profile: Profile) =>
-        <p key={profile.id}>{profile.name}</p>
+        <ProfileCard key={profile.id} profile={profile} />
       )}
     </>
   )
