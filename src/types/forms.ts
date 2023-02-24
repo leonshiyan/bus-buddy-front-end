@@ -1,5 +1,7 @@
 /* ---------==== custom forms ====--------- */
-
+export interface AddFavStopData {
+  stopNo : number
+}
 
 
 /* ---------===== auth forms =====--------- */

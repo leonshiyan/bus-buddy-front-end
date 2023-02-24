@@ -11,6 +11,9 @@ export interface SearchResult {
   }[]
 }
 
+export interface MyStop {
+  stopNo: number
+}
 
 /* ---------===== auth models =====--------- */
 
@@ -20,6 +23,7 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
+  myFavStops: {}
 }
 
 export interface User {
