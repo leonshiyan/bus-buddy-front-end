@@ -53,11 +53,16 @@ const Landing = (props: LandingProps): JSX.Element => {
       
       {error && <p className={styles.errorMessage}>{error}</p>}
 
-      {searchResults.map((result) => (
+      {searchResults.length === 0 ? (
+      <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
+      </p>
+    ) : (
+      searchResults.map((result) => (
         <div key={result.RouteNo}>
           <BusStopCard {...result} />
         </div>
-      ))}
+      ))
+    )}
     </main>
   )
 }
