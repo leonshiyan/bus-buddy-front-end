@@ -18,12 +18,12 @@ interface LandingProps {
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     if (!user) {
-      setSearchResults([]);
-      setError(null);
+      setSearchResults([])
+      setError(null)
     }
   }, [user]);
 
@@ -38,8 +38,8 @@ const Landing = (props: LandingProps): JSX.Element => {
         setSearchResults(resultsWithSearchValue)
         setError(null)
       } catch (error) {
-        setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`);
-        setSearchResults([]);
+        setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`)
+        setSearchResults([])
       }
       
     }
@@ -53,7 +53,7 @@ const Landing = (props: LandingProps): JSX.Element => {
       
       {error && <p className={styles.errorMessage}>{error}</p>}
 
-      {searchResults.length === 0 ? (
+      {searchResults.length === 0 && !error ? (
       <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
       </p>
     ) : (

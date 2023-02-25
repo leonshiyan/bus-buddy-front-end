@@ -3,6 +3,11 @@
   align-items: center;
   flex-direction: column;
 }
+
 .errorMessage {
   color: red;
+}
+.container div{
+  border: solid black;
+  width: 40vw;
 }
