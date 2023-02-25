@@ -23,6 +23,7 @@ import './App.css'
 
 // types
 import { User,Profile } from './types/models'
+import MyStops from './pages/MyStops/MyStops'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -57,6 +58,14 @@ function App(): JSX.Element {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route
+          path="/myStops"
+          element={
+            <ProtectedRoute user={user}>
+              <MyStops user={user}/>
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

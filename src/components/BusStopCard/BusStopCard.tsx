@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SearchResult } from '../../types/models'
 import { AddFavStopData } from '../../types/forms'
-import * as addStopServices from '../../services/addStopService'
+import * as addStopServices from '../../services/stopService'
 
 const BusStopCard = (result:SearchResult) => {
   const handleAddStop = async () => {
