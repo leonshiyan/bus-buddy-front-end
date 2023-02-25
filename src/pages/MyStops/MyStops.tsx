@@ -1,25 +1,23 @@
-// types
-import { User } from '../../types/models'
-import { MyStop } from '../../types/models'
-import { useState,useEffect } from 'react'
-//service
-import * as addStopServices from '../../services/stopService'
+import { useState, useEffect } from 'react';
 
+// types
+import { MyStop } from '../../types/models'
+//service
+import * as stopServices from '../../services/stopService'
 
 interface MyStopsProps {
-  user: User | null
+  user: any;
 }
-
 const MyStops = (props: MyStopsProps): JSX.Element => {
   const { user } = props
-  const [stops, setStops] = useState<MyStop[]>([]) 
-
+  const [stops, setStops] = useState<MyStop[]>([]);
   useEffect(() => {
-    async function fetchStops() {
+    const fetchStops = async () => {
       try {
-        await addStopServices.index()
+        const fetchedStops = await stopServices.getAllStops();
+        setStops(fetchedStops);
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     }
     fetchStops()
@@ -27,6 +25,11 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
   return (
     <>
       <h1>This is my Stop page</h1>
+      <ul>
+        {stops.map(stop => (
+          <li key={stop.stopNo}>{stop.stopNo}</li>
+        ))}
+      </ul>
     </>
   )
 }

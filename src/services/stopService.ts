@@ -2,22 +2,24 @@
 import * as tokenService from './tokenService'
 
 // types
-import { Profile } from '../types/models'
+
 import { AddFavStopData } from '../types/forms'
 import { MyStop } from '../types/models'
+
 
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/stops`
 
 
-async function index(): MyStop {
+async function getAllStops(): Promise<MyStop[]> {
   try {
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
-    return res.json()
+    return await res.json() as MyStop[]
   } catch (error) {
     console.log(error)
+    return []
   }
 }
 
@@ -37,4 +39,4 @@ async function create(formData:AddFavStopData): Promise<MyStop> {
   }
 }
 
-export { create }
+export { create, getAllStops}
