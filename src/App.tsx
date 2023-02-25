@@ -24,6 +24,7 @@ import './App.css'
 // types
 import { User,Profile } from './types/models'
 import MyStops from './pages/MyStops/MyStops'
+import MyStopDetails from './pages/MyStopDetails/MyStopDetails'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -65,6 +66,10 @@ function App(): JSX.Element {
               <MyStops user={user}/>
             </ProtectedRoute>
           }
+        />
+        <Route 
+        path= "/stops/:stopNo"
+        element = {<MyStopDetails/>}
         />
         <Route
           path="/signup"

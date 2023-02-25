@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 // types
 import { MyStop } from '../../types/models'
@@ -22,12 +23,19 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
     }
     fetchStops()
   }, [])
+  if(!stops.length) return <p>No stops yet</p>
+
   return (
     <>
       <h1>This is my Stop page</h1>
+      
       <ul>
         {stops.map(stop => (
-          <li key={stop.stopNo}>{stop.stopNo}</li>
+          <li key={stop.stopNo}>
+            <Link to={`/stops/${stop.stopNo}`}>
+              {stop.stopNo}
+            </Link>
+          </li>
         ))}
       </ul>
     </>
