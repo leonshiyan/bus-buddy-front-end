@@ -6,7 +6,7 @@ import { SearchResult } from '../../types/models'
 // service
 import * as apiService from '../../services/apiService'
 
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import SearchForm from '../../components/SearchForm/SearchForm'
 import BusStopCard from '../../components/BusStopCard/BusStopCard'
@@ -20,22 +20,29 @@ const Landing = (props: LandingProps): JSX.Element => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
   const [error, setError] = useState<string | null>(null);
 
-
-const handleSearch = async (busStopNumber: string) => {
-  try {
-    const searchResults = await apiService.getStop(busStopNumber)
-    //attach the input as part of the result
-    const resultsWithSearchValue = searchResults.map((result: any) => ({
-      ...result,
-      searchValue: busStopNumber,
-    }))
-      setSearchResults(resultsWithSearchValue)
-    } catch (error) {
-      setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`);
-    setSearchResults([]);
+  useEffect(() => {
+    if (!user) {
+      setSearchResults([]);
+      setError(null);
     }
-    
-  }
+  }, [user]);
+
+  const handleSearch = async (busStopNumber: string) => {
+    try {
+      const searchResults = await apiService.getStop(busStopNumber)
+      //attach the input as part of the result
+      const resultsWithSearchValue = searchResults.map((result: any) => ({
+        ...result,
+        searchValue: busStopNumber,
+      }))
+        setSearchResults(resultsWithSearchValue)
+        setError(null)
+      } catch (error) {
+        setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`);
+        setSearchResults([]);
+      }
+      
+    }
 
 
   return (
@@ -45,7 +52,7 @@ const handleSearch = async (busStopNumber: string) => {
       {user && <SearchForm handleSearch={handleSearch} />}
       
       {error && <p className={styles.errorMessage}>{error}</p>}
-      
+
       {searchResults.map((result) => (
         <div key={result.RouteNo}>
           <BusStopCard {...result} />
