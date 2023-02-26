@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link,useLocation  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // types
 import { MyStop } from '../../types/models'
@@ -33,10 +33,8 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
         {stops.map(stop => (
           <li key={stop.stopNo}>
             <Link
-              to={{
-                pathname : `/stops/${stop.stopNo}`,
-                state :{ stop } 
-              }as { pathname: string, state: { stop: MyStop } }} 
+              to={`/stops/${stop.stopNo}`}
+              state={stop}
             >
               {stop.stopNo}
             </Link>

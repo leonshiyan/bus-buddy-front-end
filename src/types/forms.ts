@@ -1,6 +1,7 @@
 /* ---------==== custom forms ====--------- */
 export interface AddFavStopData {
-  stopNo : number
+  stopNo : number;
+  title : string;
 }
 
 

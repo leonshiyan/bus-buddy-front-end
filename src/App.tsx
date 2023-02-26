@@ -76,12 +76,12 @@ function App(): JSX.Element {
           }
         />
         <Route 
-        path= "/stops/:stopNo"
-        element = {
-          <ProtectedRoute user={user}>
-            <MyStopDetails />
-          </ProtectedRoute>
-        }
+          path= "/stops/:stopNo"
+          element = {
+            <ProtectedRoute user={user}>
+              <MyStopDetails/>
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/signup"

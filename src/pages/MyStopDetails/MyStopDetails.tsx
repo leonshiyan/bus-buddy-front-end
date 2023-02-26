@@ -44,8 +44,6 @@ const MyStopDetails = (): JSX.Element  => {
           ))}
         </div>
       ))}
-      {/* <button onClick={handleUpdateTitle}>Update Title</button>
-      <button onClick={handleDeleteStop}>Delete Stop</button> */}
     </div>
   )
 }

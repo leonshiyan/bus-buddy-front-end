@@ -6,7 +6,8 @@ import * as addStopServices from '../../services/stopService'
 const BusStopCard = (result:SearchResult) => {
   const handleAddStop = async () => {
     const formData: AddFavStopData = {
-      stopNo: result.searchValue
+      stopNo: result.searchValue,
+      title: `${result.searchValue} - ${result.RouteName} (${result.Direction})`
     }
     try {
       await addStopServices.create(formData)
