@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react"
 import * as apiService from "../../services/apiService"
-import { useParams, useLocation } from 'react-router-dom'
+import * as stopService from "../../services/stopService"
+import { useParams, useLocation, useNavigate  } from 'react-router-dom'
 //types
 import { SearchResult } from '../../types/models'
 
@@ -12,6 +13,8 @@ const MyStopDetails = (): JSX.Element  => {
   const { stopNo } = useParams<StopParams>()
   const location = useLocation()
   const myStop = location.state
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,15 +25,17 @@ const MyStopDetails = (): JSX.Element  => {
     }
     fetchData()
   }, [stopNo])
-  
+
   const deleteStop = async () => {
     try {
-      await apiService.deleteStop(myStop.id);
-      // Redirect to the home page or another appropriate page after deletion
+      await stopService.deleteStop(myStop.id);
+      navigate("/stops")
     } catch (error) {
       console.error(error);
     }
   }
+
+
   return (
     <div>
       <h1>Stop Details</h1>

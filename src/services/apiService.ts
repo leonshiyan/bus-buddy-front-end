@@ -15,5 +15,4 @@ async function getStop(stopNo: string) {
   }
 }
 
-
 export {getStop}
