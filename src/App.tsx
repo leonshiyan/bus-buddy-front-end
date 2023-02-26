@@ -67,7 +67,7 @@ function App(): JSX.Element {
               <SearchPage user={user}/>
             </ProtectedRoute>} />
         <Route
-          path="/myStops"
+          path="/stops"
           element={
             <ProtectedRoute user={user}>
               <MyStops user={user}/>
@@ -76,7 +76,11 @@ function App(): JSX.Element {
         />
         <Route 
         path= "/stops/:stopNo"
-        element = {<MyStopDetails/>}
+        element = {
+          <ProtectedRoute user={user}>
+            <MyStopDetails/>
+          </ProtectedRoute>
+        }
         />
         <Route
           path="/signup"

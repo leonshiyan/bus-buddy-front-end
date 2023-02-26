@@ -18,9 +18,17 @@ const MyStopDetails = (): JSX.Element  => {
       }
     }
 
-    fetchData();
-  }, [searchResults]);
+    fetchData()
+  }, [searchResults])
 
+  // const handleUpdateTitle = () => {
+  //   // code to update the title of the stop
+  // }
+
+  // const handleDeleteStop = async () => {
+  //   await apiService.deleteStop(stopNo);
+  //   history.push("/mystops"); // redirect to mystops page after deleting the stop
+  // }
 
   return (
     <div>
@@ -36,6 +44,8 @@ const MyStopDetails = (): JSX.Element  => {
           ))}
         </div>
       ))}
+      {/* <button onClick={handleUpdateTitle}>Update Title</button>
+      <button onClick={handleDeleteStop}>Delete Stop</button> */}
     </div>
   )
 }
