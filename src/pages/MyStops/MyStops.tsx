@@ -1,10 +1,15 @@
+// stylesheets
+import styles from './MyStops.module.css'
+// hooks
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-
 // types
 import { MyStop } from '../../types/models'
-//service
+// service
 import * as stopServices from '../../services/stopService'
+// components
+import { ListGroup, Button } from 'react-bootstrap';
+
 
 interface MyStopsProps {
   user: any;
@@ -26,22 +31,21 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
   if(!stops.length) return <p>No stops yet</p>
 
   return (
-    <>
-      <h1>This is my Stop page</h1>
-      
-      <ul>
+    <main className={styles.container}>
+      <h1>My Favourite Stops</h1>
+      <ListGroup>
         {stops.map(stop => (
-          <li key={stop.stopNo}>
+          <ListGroup.Item action key={stop.stopNo}>
             <Link
               to={`/stops/${stop.stopNo}`}
               state={stop}
             >
               {stop.title}
             </Link>
-          </li>
+          </ListGroup.Item>
         ))}
-      </ul>
-    </>
+      </ListGroup>
+    </main>
   )
 }
 export default MyStops

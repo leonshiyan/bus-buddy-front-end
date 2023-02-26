@@ -24,8 +24,8 @@ const BusStopCard = (result:SearchResult) => {
           <Card.Title>Bus Stop: {result.searchValue}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Bus Route: {result.RouteNo}</Card.Subtitle>
           <Card.Text>
-          Bus route name: {result.RouteName}
-          <p>Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b></p>
+            <p>Name: < br/>{result.RouteName}</p>
+            <p>Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b></p>
           </Card.Text>
           <Card.Text>
           <p>Next:</p>
