@@ -25,6 +25,7 @@ const MyStopDetails = (): JSX.Element  => {
         setSearchResults(searchResults)
       }
     }
+    console.log("Data fetched!!!!")
     fetchData()
   }, [stopNo])
 
@@ -40,9 +41,13 @@ const MyStopDetails = (): JSX.Element  => {
     setNewTitle(event.target.value);
   }
 
-  const updateTitle = () => {
-    myStop.title = newTitle;
-    // call API service to update the title in the backend
+  const updateTitle = async() => {
+    try {
+      await stopService.update(myStop.id,newTitle);
+      navigate("/stops")
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
