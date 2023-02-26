@@ -23,6 +23,7 @@ import * as profileService from './services/profileService'
 
 // stylesheets
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // types
 import { User,Profile } from './types/models'

@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 // types
 import { User } from '../../types/models'
+//compoenents
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 
 interface NavBarProps {
   user: User | null;
@@ -13,22 +17,27 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   const { user, handleLogout } = props
   
   return (
-    <nav>
-      {user ?
-        <ul>
-          <li><NavLink to="/">Welcome, {user.name}</NavLink></li>
-          <li><NavLink to="/stops">My Bus Stops</NavLink></li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
-          <li><NavLink to="/change-password">Change Password</NavLink></li>
-          <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
-        </ul>
-      :
-        <ul>
-          <li><NavLink to="/login">Log In</NavLink></li>
-          <li><NavLink to="/signup">Sign Up</NavLink></li>
-        </ul>
-      }
-    </nav>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="/">BusBuddy</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          {user ?
+          <Nav className="me-auto">
+            <Nav.Link href="/stops">My Bus Stops</Nav.Link>
+            <Nav.Link href="/profiles">Profiles</Nav.Link>
+            <Nav.Link href="/change-password">Change Password</Nav.Link>
+            <Nav.Link href="" onClick={handleLogout}>LOG OUT</Nav.Link>
+          </Nav>
+          :
+          <Nav className="me-auto">
+              <Nav.Link href="/login">Log In</Nav.Link>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+          </Nav>
+          }
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 

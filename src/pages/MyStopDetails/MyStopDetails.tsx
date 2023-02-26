@@ -1,13 +1,15 @@
 import { useState,useEffect } from "react"
+import { useParams, useLocation, useNavigate  } from 'react-router-dom'
 import * as apiService from "../../services/apiService"
 import * as stopService from "../../services/stopService"
-import { useParams, useLocation, useNavigate  } from 'react-router-dom'
 //types
 import { SearchResult } from '../../types/models'
+
 
 type StopParams = {
   stopNo: string
 }
+
 const MyStopDetails = (): JSX.Element  => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
   const [newTitle, setNewTitle] = useState("");
@@ -25,7 +27,6 @@ const MyStopDetails = (): JSX.Element  => {
         setSearchResults(searchResults)
       }
     }
-    console.log("Data fetched!!!!")
     fetchData()
   }, [stopNo])
 
