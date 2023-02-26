@@ -1,5 +1,6 @@
 import { useState } from 'react'
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
 interface SearchFormProps {
   handleSearch: (query: string) => void
 }
@@ -13,10 +14,20 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={query} onChange={(event) => setQuery(event.target.value)} />
-      <button type="submit">Search</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBusNo">
+        <Form.Label>Bus Stop Number</Form.Label>
+        <Form.Control 
+          type="text" 
+          placeholder="e.g. 60980" 
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Search
+      </Button>
+    </Form>
   )
 }
 
