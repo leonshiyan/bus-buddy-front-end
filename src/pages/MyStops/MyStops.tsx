@@ -36,7 +36,7 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
               to={`/stops/${stop.stopNo}`}
               state={stop}
             >
-              {stop.stopNo}
+              {stop.title}
             </Link>
           </li>
         ))}

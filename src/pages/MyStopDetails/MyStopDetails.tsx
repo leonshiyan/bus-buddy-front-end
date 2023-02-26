@@ -10,6 +10,8 @@ type StopParams = {
 }
 const MyStopDetails = (): JSX.Element  => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [newTitle, setNewTitle] = useState("");
+
   const { stopNo } = useParams<StopParams>()
   const location = useLocation()
   const myStop = location.state
@@ -34,14 +36,27 @@ const MyStopDetails = (): JSX.Element  => {
       console.error(error);
     }
   }
+  const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewTitle(event.target.value);
+  }
 
+  const updateTitle = () => {
+    myStop.title = newTitle;
+    // call API service to update the title in the backend
+  }
 
   return (
     <div>
       <h1>Stop Details</h1>
+      <h2>{myStop.title}</h2>
+      <input type="text" value={newTitle} onChange={handleTitleChange} />
+      <button onClick={updateTitle}>Update Title</button>
+      <button onClick={deleteStop}>Delete this stop</button>
+      <h3>Bus Stop: {myStop.stopNo}</h3>
       {searchResults.map((result) => (
         <div key={result.RouteNo}>
-          <p>Bus Stop: {myStop.stopNo}</p>
+          
+          
           <p>Bus Route: {result.RouteNo}</p>
           <p>Route Name: {result.RouteName}</p>
           <p>Schedules:</p>
@@ -50,7 +65,7 @@ const MyStopDetails = (): JSX.Element  => {
           ))}
         </div>
       ))}
-      <button onClick={deleteStop}>Delete Stop</button>
+      
     </div>
   )
 }
