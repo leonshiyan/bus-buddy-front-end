@@ -1,6 +1,6 @@
-
 // stylesheets
-import styles from './Landing.module.css'
+import styles from './SearchPage.module.css'
+
 // types
 import { User } from '../../types/models'
 import { SearchResult } from '../../types/models'
@@ -52,7 +52,7 @@ const SearchPage = (props: SearchPageProps): JSX.Element => {
       
       {error && <p className={styles.errorMessage}>{error}</p>}
 
-      {searchResults.length === 0 && !error ? (
+      {searchResults.length === 0 && error ? (
       <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
       </p>
     ) : (
