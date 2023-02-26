@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { SearchResult } from '../../types/models'
 import { AddFavStopData } from '../../types/forms'
 import * as addStopServices from '../../services/stopService'
+//components
+import Card from 'react-bootstrap/Card'
 
 const BusStopCard = (result:SearchResult) => {
   const handleAddStop = async () => {
@@ -17,16 +19,23 @@ const BusStopCard = (result:SearchResult) => {
   }
   return ( 
     <>
-      <p>Bus Stop: {result.searchValue}</p>
-      <p>Bus Route: {result.RouteNo}</p>
-      <p>Route Name: {result.RouteName}</p>
-      <p>Schedules:</p>
-      {result.Schedules.map((schedule) => (
-        <p key={schedule.ExpectedLeaveTime}>Time: {schedule.ExpectedLeaveTime}</p>
-      ))}
-      <button onClick={handleAddStop}>
-        Add to my favourite!
-      </button>
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>Bus Stop: {result.searchValue}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Bus Route: {result.RouteNo}</Card.Subtitle>
+          <Card.Text>
+          Bus route name: {result.RouteName}
+          <p>Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b></p>
+          </Card.Text>
+          <Card.Text>
+          <p>Next:</p>
+            {result.Schedules.map((schedule) => (
+              <p key={schedule.ExpectedLeaveTime}> {schedule.ExpectedLeaveTime}</p>
+            ))}
+          </Card.Text>
+          <Card.Link href="/stops" onClick={handleAddStop}>Add this to my stop</Card.Link>
+        </Card.Body>
+      </Card>
     </>
   )
 }

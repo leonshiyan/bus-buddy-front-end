@@ -1,3 +1,15 @@
+:root {
+  --margin-left : 10px;
+}
+
+.searchDisplay{
+  width: 10vw - var(--margin-left );
+  margin-left: var(--margin-left );
+  margin-right: var(--margin-left );
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
 .errorMessage {
   color: red;
 }

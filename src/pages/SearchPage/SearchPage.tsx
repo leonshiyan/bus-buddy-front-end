@@ -45,14 +45,14 @@ const SearchPage = (props: SearchPageProps): JSX.Element => {
       
     }
   return (
-    <div>
+    <div className={styles.searchDisplay}>
       <h1>Next Bus</h1>
-      <h2>Next Bus is a quick way to look up departure, real time, or scheduled times for a specific bus stop and bus route.</h2>
+      <p>Next Bus is a quick way to look up departure, real time, or scheduled times for a specific bus stop.</p>
       {user && <SearchForm handleSearch={handleSearch} />}
       
       {error && <p className={styles.errorMessage}>{error}</p>}
 
-      {searchResults.length === 0 && error ? (
+      {searchResults.length === 0 ? (
       <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
       </p>
     ) : (
