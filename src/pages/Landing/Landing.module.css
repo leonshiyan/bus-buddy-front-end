@@ -1,9 +1,28 @@
 .container {
   display: flex;
   align-items: center;
+  text-align: center;
   flex-direction: column;
+  height: 100wh;
+  background-image: url('../../assets/hp_expo_snow2.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.container div{
-  border: solid black;
-  width: 40vw;
+
+.welcome {
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  color:white;
+  background-color: rgba(10, 10, 10, 0.5); 
+  backdrop-filter: blur(10px); /* Add a blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Fallback for Safari */
+  border-radius: 5px;
+  margin-top: 10vh;
+  width: 60vw;
+}
+
+.display {
+  margin-top: 0vh;
 }

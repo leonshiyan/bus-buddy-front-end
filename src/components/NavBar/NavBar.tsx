@@ -17,7 +17,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   const { user, handleLogout } = props
   
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
       <Container>
         <Navbar.Brand href="/">BusBuddy</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
