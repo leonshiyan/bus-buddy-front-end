@@ -14,6 +14,11 @@ export interface SearchResult {
 
 export interface MyStop {
   stopNo: number
+  title:string | null
+  id: number
+  profileId : number
+  createdAt: string;
+  updatedAt: string;
 }
 
 /* ---------===== auth models =====--------- */

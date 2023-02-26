@@ -9,6 +9,8 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SearchPage from './pages/SearchPage/SearchPage'
+import MyStopDetails from './pages/MyStopDetails/MyStopDetails'
+import MyStops from './pages/MyStops/MyStops'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -24,8 +26,7 @@ import './App.css'
 
 // types
 import { User,Profile } from './types/models'
-import MyStops from './pages/MyStops/MyStops'
-import MyStopDetails from './pages/MyStopDetails/MyStopDetails'
+
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -78,7 +79,7 @@ function App(): JSX.Element {
         path= "/stops/:stopNo"
         element = {
           <ProtectedRoute user={user}>
-            <MyStopDetails/>
+            <MyStopDetails />
           </ProtectedRoute>
         }
         />
