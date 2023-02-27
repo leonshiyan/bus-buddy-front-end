@@ -13,6 +13,9 @@ import { AuthFormProps } from '../../types/props'
 import { LoginFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
 
+// components
+import Button from 'react-bootstrap/Button'
+
 const LoginForm = (props: AuthFormProps): JSX.Element => {
   const {updateMessage, handleAuthEvt} = props
   const navigate = useNavigate()
@@ -72,11 +75,15 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
         />
       </div>
       <div>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <Button 
+        disabled={isFormInvalid()} 
+        variant = "success"
+        type="submit"
+        >
           Log In
-        </button>
+        </Button>
         <Link to="/">
-          <button>Cancel</button>
+          <Button variant = "warning">Cancel</Button>
         </Link>
       </div>
     </form>
