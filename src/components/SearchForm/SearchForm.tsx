@@ -22,9 +22,10 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
           placeholder="e.g. 60980" 
           value={query}
           onChange={(event) => setQuery(event.target.value)}
+          className= "shadow-sm"
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" style={{ width: '20%' }}>
         Search
       </Button>
     </Form>

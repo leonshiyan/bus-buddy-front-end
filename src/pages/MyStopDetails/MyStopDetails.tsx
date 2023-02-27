@@ -69,12 +69,7 @@ const MyStopDetails = (): JSX.Element  => {
         <Button onClick={updateTitle} variant="warning">Update Title</Button>
         <Button onClick={deleteStop} variant="danger">Delete this stop</Button>
       </Form>
-
-
-
       <h3>Bus Stop: {myStop.stopNo}</h3>
-
-
       {searchResults.map((result) => (
         <div key={result.RouteNo}>
           
