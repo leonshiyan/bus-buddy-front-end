@@ -3,7 +3,14 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  height: 100wh;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100vw;
+  height: var(--banner-height);
   background-image: url('../../assets/hp_expo_snow2.webp');
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +19,6 @@
 .welcome {
   display: flex;
   align-items: center;
-  
   flex-direction: column;
   color:white;
   background-color: rgba(10, 10, 10, 0.5); 
@@ -20,9 +26,16 @@
   -webkit-backdrop-filter: blur(10px); /* Fallback for Safari */
   border-radius: 5px;
   margin-top: 10vh;
+  margin-bottom: 10vh;
   width: 60vw;
+  height: 10rem
 }
 
 .display {
   margin-top: 0vh;
+}
+
+.article {
+  width: 100vw;
+  height: calc(92vh - var(--banner-height));
 }

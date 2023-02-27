@@ -15,26 +15,30 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
+    <>
     <main className={styles.container}>
-      <div className={styles.welcome}>
-      <h1>Hello, {user ? user.name : 'friend'}</h1>
-        <article>
+      <div className = {styles.banner}>
+        <div className={styles.welcome}>
+          <h1>Hello, {user ? user.name : 'friend'}</h1>
           <h1>Welcome to BusBuddy</h1>
           <p>To make your daily commute easier</p>
-        </article>
+        </div>
       </div>
-      <div className={styles.display}>
-        {user && (
-          <div className="d-grid gap-2">
-            <Link to="/search">
-              <Button variant="primary" size="lg">
-                Search for bus stops
-              </Button>
-            </Link>
-          </div>
-        )}
-      </div>
+      <article className={styles.article}>
+        <div className={styles.display}>
+          {user && (
+            <div className="d-grid gap-2">
+              <Link to="/search">
+                <Button variant="primary" size="lg">
+                  Start search for Next Bus
+                </Button>
+              </Link>
+            </div>
+          )}
+        </div>
+      </article>
     </main>
+    </>
   )
 }
 
