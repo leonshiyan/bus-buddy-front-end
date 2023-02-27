@@ -16,7 +16,6 @@ const Landing = (props: LandingProps): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      
       <div className={styles.welcome}>
       <h1>Hello, {user ? user.name : 'friend'}</h1>
         <article>
