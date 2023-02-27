@@ -25,7 +25,7 @@ const SearchForm = (props: SearchFormProps): JSX.Element => {
           className= "shadow-sm"
         />
       </Form.Group>
-      <Button variant="primary" type="submit" style={{ width: '20%' }}>
+      <Button variant="primary" type="submit" style={{ width: '30vw' }}>
         Search
       </Button>
     </Form>

@@ -11,6 +11,7 @@ import { SearchResult } from '../../types/models'
 //components
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 type StopParams = {
   stopNo: string
@@ -69,20 +70,27 @@ const MyStopDetails = (): JSX.Element  => {
         <Button onClick={updateTitle} variant="warning">Update Title</Button>
         <Button onClick={deleteStop} variant="danger">Delete this stop</Button>
       </Form>
+
       <h3>Bus Stop: {myStop.stopNo}</h3>
       {searchResults.map((result) => (
-        <div key={result.RouteNo}>
-          
-          
-          <p>Bus Route: {result.RouteNo}</p>
-          <p>Route Name: {result.RouteName}</p>
-          <p>Schedules:</p>
-          {result.Schedules.map((schedule) => (
-            <p key={schedule.ExpectedLeaveTime}>Time: {schedule.ExpectedLeaveTime}</p>
+        <Card   className= "shadow-sm" bg = "light" style={{ width: '100%' }}>
+        <Card.Body >
+          <Card.Title>Bus Stop: {result.searchValue}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Bus Route: {result.RouteNo}</Card.Subtitle>
+          <Card.Text>
+            <span>Name: {result.RouteName} {result.Direction}</span> 
+              < br/> 
+              Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b>
+          </Card.Text>
+          <Card.Text>
+            Next:< br/>
+            {result.Schedules.map((schedule) => (
+              <div key={schedule.ExpectedLeaveTime}> {schedule.ExpectedLeaveTime}</div>
+            ))}
+          </Card.Text>
+        </Card.Body>
+      </Card>
           ))}
-        </div>
-      ))}
-      
     </div>
   )
 }
