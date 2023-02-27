@@ -37,7 +37,8 @@ BusBuddy is a mobile first design app specifically for BC commuters. It is a fas
 
 ## Icebox
 
-- [ ] Allow users to search schedule using bus route
-- [ ] Allow users to find stops using bus route
-- [ ] Allow users to add bus route to favourite
-- [ ] Implement proximity check so user can locate stops within certain range
+- [ ] Allow users to search schedule using bus route.
+- [ ] Allow users to find stops using bus route.
+- [ ] Allow users to add bus route to favourite.
+- [ ] Implement proximity check so user can locate stops .within certain range.
+- [ ] Extend availablility to other provinces.
