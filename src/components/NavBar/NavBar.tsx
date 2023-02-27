@@ -23,9 +23,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <img
               alt=""
               src="/bus.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block"
           />{' '}
           BusBuddy
         </Navbar.Brand>
