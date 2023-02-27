@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SearchPage from './pages/SearchPage/SearchPage'
 import MyStopDetails from './pages/MyStopDetails/MyStopDetails'
 import MyStops from './pages/MyStops/MyStops'
+import Footer from './components/Footer/Footer'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -109,6 +110,7 @@ function App(): JSX.Element {
           }
         />
       </Routes>
+      <Footer />
     </>
   )
 }

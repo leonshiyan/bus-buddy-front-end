@@ -37,5 +37,5 @@
 
 .article {
   width: 100vw;
-  height: calc(92vh - var(--banner-height));
+  height: calc(85vh - var(--banner-height));
 }
