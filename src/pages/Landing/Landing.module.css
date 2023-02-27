@@ -25,15 +25,12 @@
   backdrop-filter: blur(10px); /* Add a blur effect */
   -webkit-backdrop-filter: blur(10px); /* Fallback for Safari */
   border-radius: 5px;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   width: 60vw;
   height: 10rem
 }
 
-.display {
-  margin-top: 0vh;
-}
 
 .article {
   width: 100vw;

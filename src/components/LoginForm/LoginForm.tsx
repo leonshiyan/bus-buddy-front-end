@@ -83,7 +83,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
           Log In
         </Button>
         <Link to="/">
-          <Button variant = "warning">Cancel</Button>
+          <Button variant = "danger">Cancel</Button>
         </Link>
       </div>
     </form>

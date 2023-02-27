@@ -12,6 +12,7 @@ import styles from './ChangePasswordForm.module.css'
 import { AuthFormProps } from '../../types/props'
 import { ChangePasswordFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
+import { Button } from 'react-bootstrap'
 
 const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
   const {updateMessage, handleAuthEvt} = props
@@ -89,11 +90,15 @@ const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <Button 
+        disabled={isFormInvalid()} 
+        variant = "success"
+        type="submit"
+        >
           Change Password
-        </button>
+        </Button>
         <Link to="/">
-          <button>Cancel</button>
+          <Button variant = "danger">Cancel</Button>
         </Link>
       </div>
     </form>
