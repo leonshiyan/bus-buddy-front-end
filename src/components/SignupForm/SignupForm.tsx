@@ -7,6 +7,8 @@ import * as authService from '../../services/authService'
 
 // stylesheets
 import styles from './SignupForm.module.css'
+// components
+import Button from 'react-bootstrap/Button'
 
 // types
 import { AuthFormProps } from '../../types/props'
@@ -122,14 +124,20 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <button 
+        <Button 
+          variant="success"
           disabled={isFormInvalid() || isSubmitted} 
           className={styles.button}
         >
           {!isSubmitted ? "Sign Up" : "🚀 Sending..."}
-        </button>
+        </Button>{' '}
         <Link to="/">
-          <button>Cancel</button>
+          <Button 
+            variant="danger" 
+            className={styles.button}
+          >
+            Cancel
+          </Button>
         </Link>
       </div>
     </form>

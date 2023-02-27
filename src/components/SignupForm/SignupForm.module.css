@@ -9,6 +9,7 @@
 .label,
 .button {
   margin-right: .5rem;
+  width: 20rem;
 }
 
 .inputContainer {
