@@ -13,9 +13,9 @@ const Footer = () => {
           <img
               alt=""
               src="/bus.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
+              width="20"
+              height="20"
+              className="d-inline-block"
           />© 2023 BusBuddy All rights reserved.</p>
       </div>
     </footer>

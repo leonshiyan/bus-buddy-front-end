@@ -23,9 +23,11 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <img
               alt=""
               src="/bus.svg"
-              className="d-inline-block"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
           />{' '}
-          BusBuddy
+        BusBuddy
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
