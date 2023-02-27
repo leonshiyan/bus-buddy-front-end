@@ -19,7 +19,16 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
       <Container>
-        <Navbar.Brand href="/">BusBuddy</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+              alt=""
+              src="/bus.svg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+          />{' '}
+          BusBuddy
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {user ?
