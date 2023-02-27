@@ -2,4 +2,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100vw - var(--margin-left );
+  margin-left: var(--margin-left );
+  margin-right: var(--margin-left );
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
