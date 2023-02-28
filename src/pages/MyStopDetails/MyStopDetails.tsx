@@ -75,17 +75,15 @@ const MyStopDetails = (): JSX.Element  => {
       {searchResults.map((result) => (
         <Card   className= "shadow-sm" bg = "light" style={{ width: '100%' }}>
         <Card.Body >
-          <Card.Title>Bus Stop: {result.searchValue}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Bus Route: {result.RouteNo}</Card.Subtitle>
+          <Card.Title>Bus Route : {result.RouteNo}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Name : {result.RouteName} {result.Direction}</Card.Subtitle>
           <Card.Text>
-            <span>Name: {result.RouteName} {result.Direction}</span> 
-              < br/> 
-              Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b>
+            Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b>
           </Card.Text>
           <Card.Text>
-            Next:< br/>
-            {result.Schedules.map((schedule) => (
-              <div key={schedule.ExpectedLeaveTime}> {schedule.ExpectedLeaveTime}</div>
+            Next :< br/>
+            {result.Schedules.map((schedule,idx) => (
+              <div key={idx}> {schedule.ExpectedLeaveTime}</div>
             ))}
           </Card.Text>
         </Card.Body>

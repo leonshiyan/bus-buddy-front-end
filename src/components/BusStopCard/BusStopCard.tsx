@@ -22,17 +22,16 @@ const BusStopCard = (result:SearchResult) => {
     < br/> 
       <Card   className= "shadow-sm" bg = "light" style={{ width: '100%' }}>
         <Card.Body >
-          <Card.Title>Bus Stop: {result.searchValue}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Bus Route: {result.RouteNo}</Card.Subtitle>
+          <Card.Title>Bus Stop : {result.searchValue}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Bus Route : {result.RouteNo}</Card.Subtitle>
           <Card.Text>
-            <span>Name: {result.RouteName} {result.Direction}</span> 
-              < br/> 
+            <p>Name : {result.RouteName} {result.Direction}</p>
               Departing in : <b>{result.Schedules[0].ExpectedCountdown <= 0 ? "Now": `${result.Schedules[0].ExpectedCountdown} minutes `}</b>
           </Card.Text>
           <Card.Text>
-            Next:< br/>
-            {result.Schedules.map((schedule) => (
-              <div key={schedule.ExpectedLeaveTime}> {schedule.ExpectedLeaveTime}</div>
+            Next Departures:< br/>
+            {result.Schedules.map((schedule,idx) => (
+              <div key={idx}> {schedule.ExpectedLeaveTime}</div>
             ))}
           </Card.Text>
           <Card.Link  href="/stops" onClick={handleAddStop}>Add this to my stop</Card.Link>

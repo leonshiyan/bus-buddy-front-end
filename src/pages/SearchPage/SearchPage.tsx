@@ -55,13 +55,13 @@ const SearchPage = (props: SearchPageProps): JSX.Element => {
       {searchResults.length === 0 ? (
       <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
       </p>
-    ) : (
-      searchResults.map((result) => (
-        <div key={result.RouteNo}>
-          <BusStopCard {...result} />
-        </div>
-      ))
-    )}
+      ) : (
+        searchResults.map((result) => (
+          <div key={result.RouteNo}>
+            <BusStopCard {...result} />
+          </div>
+        ))
+      )}
     </div>
   )
 }

@@ -20,7 +20,6 @@ async function getStop(stopNo: string) {
 }
 async function getApiKey() {
   try {
-    
     const res = await fetch(baseKeyURL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
