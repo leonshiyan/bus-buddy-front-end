@@ -8,7 +8,7 @@ import { MyStop } from '../../types/models'
 // service
 import * as stopServices from '../../services/stopService'
 // components
-import { ListGroup, Button } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 
 
 interface MyStopsProps {

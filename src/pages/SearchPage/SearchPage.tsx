@@ -4,11 +4,14 @@ import styles from './SearchPage.module.css'
 // types
 import { User } from '../../types/models'
 import { SearchResult } from '../../types/models'
+
 // service
 import * as apiService from '../../services/apiService'
 
+// hooks
 import { useState,useEffect } from 'react'
 
+// components
 import SearchForm from '../../components/SearchForm/SearchForm'
 import BusStopCard from '../../components/BusStopCard/BusStopCard'
 
