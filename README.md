@@ -2,7 +2,7 @@
 
 # [BusBuddy](https://busbuddy.netlify.app/)
 
-BusBuddy is a mobile first design app specifically for BC commuters. It is a faster and easier way to find out real time bus schedules. By entering the bus stop number infront of you, you will get the departure schedule for the next 6 buses! Don't ever be late!
+BusBuddy is a mobile-first design app specifically for BC commuters. It is a faster and easier way to find out real-time bus schedules. You will get the departure schedule for the following six buses by entering the bus stop number in front of you! Be on time!
 
 ## [Launching BusBuddy App!](https://busbuddy.netlify.app/)
 
@@ -37,8 +37,8 @@ BusBuddy is a mobile first design app specifically for BC commuters. It is a fas
 
 ## Icebox
 
-- [ ] Allow users to search schedule using bus route.
-- [ ] Allow users to find stops using bus route.
-- [ ] Allow users to add bus route to favourite.
-- [ ] Implement proximity check so user can locate stops .within certain range.
-- [ ] Extend availablility to other provinces.
+- [ ] Allow users to search schedules using bus routes.
+- [ ] Allow users to find stops using bus routes.
+- [ ] Allow users to add bus routes to their favorite.
+- [ ] Implement proximity check so the user can locate stops .within a specific range.
+- [ ] Extend availability to other provinces.
