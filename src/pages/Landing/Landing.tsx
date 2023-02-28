@@ -5,6 +5,8 @@ import { User } from '../../types/models'
 import { Link } from 'react-router-dom'
 //import component
 import Button from 'react-bootstrap/Button'
+import Carousel from 'react-bootstrap/Carousel'
+
 
 
 interface LandingProps {
@@ -24,6 +26,44 @@ const Landing = (props: LandingProps): JSX.Element => {
           <p>To make your daily commute easier</p>
         </div>
       </div>
+      <Carousel>
+        <Carousel.Item>
+          <img
+            src="../src/assets/bus1.jpg"
+            height="400"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>Traditional Stop Sign</h3>
+            <p>Signs you will see at city center</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            src="../src/assets/bus2.jpg"
+            height="400"
+            alt="Second slide"
+          />
+
+          <Carousel.Caption>
+            <h3>New Stop Sign</h3>
+            <p>New types of sign implemented recently.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            src="../src/assets/bus3.jpg"
+            height="400"
+            alt="Third slide"
+          />
+          <Carousel.Caption>
+            <h3>Slim Stop Sign</h3>
+            <p>
+              Signs most likely to see on minor roads.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
       <article className={styles.article}>
         <div className={styles.display}>
           {user && (
