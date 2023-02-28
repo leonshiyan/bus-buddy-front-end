@@ -126,6 +126,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
       <div className={styles.inputContainer}>
         <Button 
           variant="success"
+          type="submit"
           disabled={isFormInvalid() || isSubmitted} 
           className={styles.button}
         >
