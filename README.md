@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/23459228/221696000-36999656-4551-4dc9-a0df-866ecb3fa8e0.png)
+![image](https://user-images.githubusercontent.com/23459228/222002683-dd91e8be-c508-4e77-bd28-98f255a3014e.png)
 
 # [BusBuddy](https://busbuddy.netlify.app/)
 
