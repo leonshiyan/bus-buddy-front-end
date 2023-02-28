@@ -28,8 +28,12 @@ const MyStops = (props: MyStopsProps): JSX.Element => {
     }
     fetchStops()
   }, [])
-  if(!stops.length) return <p>No stops yet</p>
 
+  if(!stops.length) return (
+    <main className={styles.container}>
+      <h1>No Favourite Stops Yet</h1>
+    </main>
+  )
   return (
     <main className={styles.container}>
       <h1>My Favourite Stops</h1>
