@@ -5,8 +5,7 @@
   flex-direction: column;
 }
 .container img{
-  min-height: 400px;
-  width: auto;
+  max-height: 400px;
 }
 .banner {
   display: flex;
@@ -38,5 +37,9 @@
 
 .article {
   width: 100%;
-  height: calc(45vh - var(--banner-height));
+  height: calc(70vh - var(--banner-height));
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }

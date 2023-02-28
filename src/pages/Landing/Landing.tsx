@@ -26,6 +26,7 @@ const Landing = (props: LandingProps): JSX.Element => {
           <p>To make your daily commute easier</p>
         </div>
       </div>
+      < br/>
       <Carousel>
         <Carousel.Item>
           <img
@@ -64,10 +65,11 @@ const Landing = (props: LandingProps): JSX.Element => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      < br/>
       <article className={styles.article}>
         <div className={styles.display}>
           {user && (
-            <div className="d-grid gap-2">
+            <div className="d-grid gap-3">
               <Link to="/search">
                 <Button variant="primary" size="lg">
                   Start search for Next Bus
