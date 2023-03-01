@@ -34,7 +34,7 @@ BusBuddy is a mobile-first design app specifically for BC commuters. It is a fas
 ## Attributions
 
 - Icons from [iconfont](https://www.iconfont.cn/)
-
+- API from [Translink](https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources)
 ## Icebox
 
 - [ ] Allow users to search schedules using bus routes.
