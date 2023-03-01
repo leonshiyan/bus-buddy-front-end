@@ -40,7 +40,7 @@ const SearchPage = (props: SearchPageProps): JSX.Element => {
         searchValue: busStopNumber,
       }))
         setSearchResults(resultsWithSearchValue)
-        setError(null)
+        setError('')
       } catch (error) {
         setError(`Bus stop ${busStopNumber} not found. Please enter a valid bus stop number.`)
         setSearchResults([])
@@ -55,7 +55,7 @@ const SearchPage = (props: SearchPageProps): JSX.Element => {
       
       {error && <p className={styles.errorMessage}>{error}</p>}
 
-      {searchResults.length === 0 ? (
+      {searchResults.length === 0 && !error ? (
       <p className={styles.errorMessage}>There are currently no buses scheduled for this stop.
       </p>
       ) : (
