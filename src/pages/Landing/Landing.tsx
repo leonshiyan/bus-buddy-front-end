@@ -27,11 +27,11 @@ const Landing = (props: LandingProps): JSX.Element => {
         </div>
       </div>
       < br/>
-      <Carousel>
+      <Carousel className='carousel'>
         <Carousel.Item>
           <img
+            className="d-block"
             src="/bus1.jpg"
-            height="400"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -42,7 +42,6 @@ const Landing = (props: LandingProps): JSX.Element => {
         <Carousel.Item>
           <img
             src="/bus2.jpg"
-            height="400"
             alt="Second slide"
           />
 
@@ -54,7 +53,6 @@ const Landing = (props: LandingProps): JSX.Element => {
         <Carousel.Item>
           <img
             src="/bus3.jpg"
-            height="400"
             alt="Third slide"
           />
           <Carousel.Caption>
